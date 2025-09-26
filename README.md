@@ -19,7 +19,11 @@ This project uses `uv` for fast dependency management.
 First, install `uv` if you haven't already:
 
 ```bash
-pip install uv
+# On macOS/Linux:
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# On Windows:
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
 Next, create a virtual environment and install the required packages:
@@ -31,11 +35,12 @@ uv venv
 # Activate the virtual environment
 # On macOS/Linux:
 source .venv/bin/activate
+
 # On Windows:
 .venv\Scripts\activate
 
 # Install dependencies
-uv pip install -r requirements.txt
+uv add -r requirements.txt
 ```
 
 ### 2. Running the Script
